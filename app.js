@@ -5,8 +5,8 @@ let app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const accountSid = 'AC354c9a12fd6ba50d7127fae1b36caf00';
-const authToken = 'aad3f4275890ce2d754d334c89101353';
+const accountSid = '';
+const authToken = '';
 const client = require('twilio')(accountSid, authToken);
 
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
@@ -27,9 +27,9 @@ app.get("/sendSms", (req, res) => {
     client.messages
         .create({
             body: 'Hello Sir, This is a test message',
-            from: '+16263176753',
-            messagingServiceSid: 'MGa275eabf367e8018ada4792bbd7b351a',
-            to: '+923158984825'
+            from: '+1',
+            messagingServiceSid: '',
+            to: '+92'
         })
         .then(message => console.log(message.sid))
         .done();
